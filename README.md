@@ -23,19 +23,24 @@ Once some general findings are in place, I use linear regression analysis (throu
 
 #### store departments
 Not all grocery departments are created equal. The produce & dairy/egg departments dwarf all others in sales, even though they don't have the widest variety of products to offer.
+
 ![Amount_of_Products_Sold_by_Department](https://github.com/joeldmott/Instacart_Project/assets/51928528/ac10607f-ac43-4883-a268-3039bef46cf0)
 ![Variety_of_Products_by_Department](https://github.com/joeldmott/Instacart_Project/assets/51928528/1de50743-bf54-47b4-981d-5e6811afcc7f)
+
 These two departments sell oft-used products with relatively shorter shelf lives. Scrutinizing the variety of stock for these popular, fresher, short-lived products seems especially vital.
 
 #### reordered items are usually added to the cart first
 This graph just shows the top 100 products. Including all 35,449 unique products makes these patterns hard to see. Later, regression analysis will help us specify the exact correlation with more (but not all) products.
+
 ![Added-to-Cart-Order   Product-Reorder-Percentage](https://github.com/joeldmott/Instacart_Project/assets/51928528/811746e7-a43e-4645-9a7a-a0bbfeff4d65)
 
 #### when and how often users tend to order groceries
 Many order groceries more often than once a week, but the largest spike is every seven days (and then smaller spikes every week thereafter). “30” days is almost certainly a placeholder for “30 or more days between orders”.
+
 ![Histogram of the Number of Days Since the Previous Order](https://github.com/joeldmott/Instacart_Project/assets/51928528/cbc5cc43-cc11-4ae9-bd8a-42f453dcf485)
 
 Weekend grocery shopping is quite popular. This pattern informs the peaks in our previous graph on days since the prior order.
+
 ![Amount of Orders per Day of the Week](https://github.com/joeldmott/Instacart_Project/assets/51928528/7eef0353-cfb3-4920-b1f2-2c07a383ba67)
 
 ### Linear Regression Analysis
@@ -46,6 +51,7 @@ The overall process is threefold:
 
 #### baseline model
 ![presentation SnagIt image on product features considered](https://github.com/joeldmott/Instacart_Project/assets/51928528/a8917229-3e14-4091-8448-3ab9f93f72cf)
+
 At first, even the strongest correlation produces a weak model with an R-squared score of 0.022, so it does not explain the data well at all. This has to do with the amount of times each product was ordered; some were ordered over 150,000 times while others only once.
 
 #### revising the baseline with more helpful data
