@@ -6,7 +6,11 @@ Even before COVID, grocery-shopping services such as Instacart and Shipt had gro
 Recently, Instacart has faced challenges with more competition and the decline of pandemic-era grocery shopping order frequency, while evolving to contend with unpredictable restocking issues.
 
 ## Instacart dataset
-In 2017, Instacart held a competition on Kaggle.com with an anonymized dataset containing over three million order records. This data is held in six seperate Excel spreadsheets, five of which I combine into a SQLite database below. The total size of the data used here is just over 122.16 MB.
+In 2017, Instacart held a competition on Kaggle.com with an anonymized dataset containing over three million order records. It's too large to include in this repo, but can be found here: 
+
+https://www.kaggle.com/c/instacart-market-basket-analysis/data
+
+This data is held in six seperate Excel spreadsheets, five of which I combine into a SQLite database below. The total size of the data used here is just over 122.16 MB.
 
 This data shows information regarding orders, product details, whether the product constituted a new item for the user or a reorder, how often orders were placed, the order's day-of-week and time-of-day, and even the sequence in which each product was placed in the online cart.
 
@@ -14,6 +18,8 @@ This data shows information regarding orders, product details, whether the produ
 Now, in 2023, with grocery chains' increased in-house delivery & curbside, along with the fact that they exert at least some control over restocking as opposed to Instacart, this dataset may help these grocers manage inventory in addition to informing marketing strategies.
 
 Specifically, this project uses this dataset to make some preliminary observations and then apply linear regression to specify those findings. The goals of this project are to present three business recommendations over which aspects of the Instacart data have the most significant correlations with popular, reordered grocery products.
+
+This project's presentation may be found [here.](https://github.com/joeldmott/Instacart_Project/blob/main/presentation.pdf)
 
 ## Project process steps
 After converting the dataset's spreadsheets to csv files and reading them in as tables in a database via SQLite3, I begin with some preliminary exploratory data analysis (EDA) to understand the data and identify salient patterns or correlations. 
@@ -71,3 +77,15 @@ the likelihood of that product being ordered as a reorder decreases by 15.2%.** 
 
 ## Conclusions
 Instacart's helpful dataset can also inform grocery chain's own delivery, curbside, and restocking operations. Future or similar projects with specific stores in mind may help optimize aisle layouts or intradepartmental display. They may also help suggest how many parking spaces to reserve for curbside pickup, allocation of staff to delivery/curbside services, and grocery ordering app design.  
+
+## Repository Structure:
+├── images
+│   ├── Added-to-Cart-Order & Product-Reorder-Percentage.png
+│   ├── Amount of Orders per Day of the Week.png
+│   ├── Amount_of_Products_Sold_by_Department.png
+│   ├── Histogram of the Number of Days Since the Previous Order.png
+│   ├── Variety_of_Products_by_Department.png
+├── .gitignore
+├── README.md
+├── presentation.pdf
+└── project_notebook.ipynb
