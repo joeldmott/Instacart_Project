@@ -71,8 +71,11 @@ This makes it easier to decide to exclude hour of day altogether since keeping d
 ## **Final model results:** three recommendations for promoting new products based on two reordering correlations:
 **correlation 1:** As the average add-to-cart order of a product increases by one, the likelihood of that product being ordered as a reorder decreases by 4.7%.
 
-**recommendation 1:** Advertising a new or as-of-yet-unordered product online or in-app may be more effective towards the end of the online ordering process.
+**recommendation 1:** Advertising a new or as-of-yet-unordered product online or in-app may be more effective towards the end of the online ordering process.  
+
 **recommendation 2:**  Finding a way to cluster reorders may allow greater user patience for newer product promotion; this is likely part of the reason “click to reorder previous” options are available in some existing apps/desktop sites.
+
+---------------------------------------------------------------------------------
 
 **correlation 2:** Over the course of a week, as a product's average order day of the week increases away from Saturday by one whole day, the likelihood of that product being ordered as a reorder decreases by 15.2%.
 
@@ -91,13 +94,22 @@ Future projects may also *include data on in-store shopping* to help refine thes
 This current project may also help inform online-only stores (aka “online fulfillment centers”).  
 
 ## Repository Structure:
-├── images
-│   ├── Added-to-Cart-Order & Product-Reorder-Percentage.png
-│   ├── Amount of Orders per Day of the Week.png
-│   ├── Amount_of_Products_Sold_by_Department.png
-│   ├── Histogram of the Number of Days Since the Previous Order.png
-│   ├── Variety_of_Products_by_Department.png
-├── .gitignore
-├── README.md
-├── presentation.pdf
+├── images  
+
+│   ├── Added-to-Cart-Order & Product-Reorder-Percentage.png  
+
+│   ├── Amount of Orders per Day of the Week.png  
+
+│   ├── Amount_of_Products_Sold_by_Department.png  
+
+│   ├── Histogram of the Number of Days Since the Previous Order.png  
+
+│   ├── Variety_of_Products_by_Department.png  
+
+├── .gitignore  
+
+├── README.md  
+
+├── presentation.pdf  
+
 └── project_notebook.ipynb
