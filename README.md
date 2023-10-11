@@ -89,7 +89,7 @@ Future or similar projects *tailored towards specific stores* may help:
 - quantify reserved parking spaces for curbside pickup
 - inform allocation of staff to delivery & curbside services
 - improve grocery ordering app design
-- 
+  
 Future projects may also *include data on in-store shopping* to help refine these correlations with restocking.
 This current project may also help inform online-only stores (aka “online fulfillment centers”).  
 
