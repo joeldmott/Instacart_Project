@@ -8,7 +8,7 @@ Recently, Instacart has faced challenges with more competition and the decline o
 ## Project Goals
 I expand the use of this dataset to grocery chains with their own delivery/curbside services by using correlations with reordering to help promote new products. 
 
-Specifically, I present three business recommendations based on which aspects of an Instacart dataset have the strongest correlations with popular, reordered groceries. These correlations may also help inform restocking, ways to simplify reordering, and predictions of future orders.
+Specifically, I present three marketing recommendations based on which aspects of an Instacart dataset have the strongest correlations with popular, reordered groceries. These correlations may also help inform restocking, ways to simplify reordering, and predictions of future orders.
 
 This project's presentation may be found [here.](https://github.com/joeldmott/Instacart_Project/blob/main/presentation.pdf)
 
@@ -66,10 +66,15 @@ Eliminating rarely ordered products vastly improves the model to an R-squared sc
 #### improving on this new baseline
 The next strongest aspect of the data is the average number of days since a product was ordered. Adding this improves the model (R-squared: 0.383). The next two strongest aspects regard order frequency: order hour of day & day of the week. However, we cannot include *both* because they are too interrelated (including both makes it hard to see their individual relation to reordering). Furthermore, the hour of day aspect proves problematic for other reasons.
 
-This makes it easier to decide to exclude hour of day altogether since keeping day of the week works well. This improves the model's R-squared score to 0.434.
+This makes it easier to decide to exclude hour-of-day altogether since keeping day of the week works well. This improves the model's R-squared score to 0.434.
+
+#### final model evaluation
+An R-squared score of 0.434 is mid-range; even our final model here only explains *some* of the data. The root mean squared error turns out to be 9.86. Since our target's units are percentages ("percentage of orders as a reorder"), this means our predicted percent-likelihood-to-be-a-reorder values are typically off by 9.6%. Taking this into consideration with our R-squared of 0.434 means these predictions are "just okay". They're not completely off-base, but they're not super accurate either.
+
+This may point to some inherent difficulty in predicting which products customers tend to reorder. Nonetheless, we are still able to observe some correlations with enough confidence to make the following recommendations, even if they are a bit more generalized.
 
 ## **Final model results:** three recommendations for promoting new products based on two reordering correlations:
-**correlation 1:** As the average add-to-cart order of a product increases by one, the likelihood of that product being ordered as a reorder decreases by 4.7%.
+**correlation 1:** As a customer adds products to the cart, each product is 4.7% less likely to be a reorder.
 
 **recommendation 1:** Advertising new products would be more effective towards the end of the online ordering process.  
 
@@ -77,20 +82,20 @@ This makes it easier to decide to exclude hour of day altogether since keeping d
 
 ---------------------------------------------------------------------------------
 
-**correlation 2:** Over the course of a week, as a product's average order day of the week increases away from Saturday by one whole day, the likelihood of that product being ordered as a reorder decreases by 15.2%.
+**correlation 2:** As the week progresses from Saturday by one whole day, the likelihood of products being a reorder decreases by 15.2%.
 
 **recommendation 3:** Promoting new products on Thursdays or Fridays may help increase interest in new products before the weekend rush.
 
 ## Conclusions
 Instacart's helpful dataset can also inform grocery chains’ own delivery, curbside, and restocking operations as well as new product promotion.
 
-Future or similar projects *tailored towards specific stores* may help:
+Future or similar projects *that include in-store shopping data and are tailored towards specific stores* may help:
 - optimize aisle layouts 
 - quantify reserved parking spaces for curbside pickup
 - inform allocation of staff to delivery & curbside services
 - improve grocery ordering app design
+- inform restocking more precisely
   
-Future projects may also *include data on in-store shopping* to help refine these correlations with restocking.
 This current project may also help inform online-only stores (aka “online fulfillment centers”).  
 
 ## Repository Structure:
