@@ -1,5 +1,5 @@
 # Online Grocery Ordering Project
-Online grocery shopping has become much more mainstream since its bumpy start with Webvan in 1996. Since the onset of the pandemic, both grocery deliveries and curbside-pickup have become even more common. As of August 2023, most of the largest fifty grocery retailers in the US offer curbside.
+Online grocery shopping has become much more mainstream since its bumpy start with Webvan in 1996. Since the onset of the pandemic, both grocery deliveries and curbside pickup have become even more common. As of August 2023, most of the largest fifty grocery retailers in the US offer curbside.
 
 Even before COVID, grocery-shopping services such as Instacart and Shipt had grown popular. Their shoppers are still a common sight in stores today and many grocery chains even use Shipt (Target) and Instacart (Costco, Publix, Safeway/Tom Thumb/Randall's, Wegmans, and Sprouts) for their delivery orders. However, many of the largest chains now operate their own delivery services in addition to curbside-pickup, such as Walmart, Amazon, Kroger, ALDI, and HEB.
 
@@ -10,7 +10,7 @@ I expand the use of this dataset to grocery chains with their own delivery/curbs
 
 Specifically, I present three marketing recommendations based on which aspects of an Instacart dataset have the strongest correlations with popular, reordered groceries. These correlations may also help inform restocking, ways to simplify reordering, and predictions of future orders.
 
-This project's presentation may be found [here.](https://github.com/joeldmott/Instacart_Project/blob/main/presentation.pdf)
+This project's less technical stakeholder presentation may be found [here.](https://github.com/joeldmott/Instacart_Project/blob/main/presentation.pdf)
 
 ## Instacart dataset
 In 2017, Instacart held a competition on Kaggle.com with an anonymized dataset containing over three million order records. It's too large to include in this repo, but can be found here: 
@@ -33,10 +33,10 @@ Not all grocery departments are created equal. The produce & dairy/egg departmen
 ![Amount_of_Products_Sold_by_Department](https://github.com/joeldmott/Instacart_Project/assets/51928528/ac10607f-ac43-4883-a268-3039bef46cf0)
 ![Variety_of_Products_by_Department](https://github.com/joeldmott/Instacart_Project/assets/51928528/1de50743-bf54-47b4-981d-5e6811afcc7f)
 
-These two departments sell oft-used products with relatively shorter shelf lives. Scrutinizing the variety of stock for these popular, fresher, short-lived products seems especially vital.
+Produce & dairy sell oft-used products with relatively shorter shelf lives. Scrutinizing the variety of stock for these popular, fresher, short-lived products seems especially vital when it comes to frequent reordering.
 
 #### reordered items are usually added to the cart first
-This graph just shows the top 100 products. Including all 35,449 unique products makes these patterns hard to see. Later, regression analysis will help us specify the exact correlation with more (but not all) products.
+This graph below shows just the top 100 products since including all 35,449 unique products makes these patterns hard to see. Later, regression analysis will help us specify the exact correlation with more (but not all) products. However, we can already seee that as the customer continues to add items to their virtual cart, they're less likely to be reordering that item.
 
 ![Added-to-Cart-Order   Product-Reorder-Percentage](https://github.com/joeldmott/Instacart_Project/assets/51928528/811746e7-a43e-4645-9a7a-a0bbfeff4d65)
 
@@ -69,7 +69,7 @@ The next strongest aspect of the data is the average number of days since a prod
 This makes it easier to decide to exclude hour-of-day altogether since keeping day of the week works well. This improves the model's R-squared score to 0.434.
 
 #### final model evaluation
-An R-squared score of 0.434 is mid-range; even our final model here only explains *some* of the data. The root mean squared error turns out to be 9.86. Since our target's units are percentages ("percentage of orders as a reorder"), this means our predicted percent-likelihood-to-be-a-reorder values are typically off by 9.6%. Taking this into consideration with our R-squared of 0.434 means these predictions are "just okay". They're not completely off-base, but they're not super accurate either.
+An R-squared score of 0.434 is mid-range; our final model here only explains *some* of the data. The root mean squared error turns out to be 9.86. Since our target's units are percentages ("percentage of orders as a reorder"), this means our predicted percent-likelihood-to-be-a-reorder values are typically off by 9.6%. Taking this into consideration with our R-squared of 0.434 means these predictions are "just okay". They're not completely off-base, but they're not super accurate either.
 
 This may point to some inherent difficulty in predicting which products customers tend to reorder. Nonetheless, we are still able to observe some correlations with enough confidence to make the following recommendations, even if they are a bit more generalized.
 
